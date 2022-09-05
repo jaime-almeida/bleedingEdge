@@ -1,0 +1,1164 @@
+<!-- INPUT FILE FOR UNDERWORLD 1.x MIND THAT THE SCALING FACTOR FOR TIME IS 1e22-->
+
+<StGermainData xmlns="http://www.vpac.org/StGermain/XML_IO_Handler/Jun2003">
+	<list name="import">
+		<param> Underworld </param>
+		<param> CartesianEarthBox
+ </param>
+	</list>
+	<include>../../CartesianEarthBox/InputFiles/_thermoMechanicalFlow.xml</include>
+	<include>Underworld/REP_Setup.xml</include>
+	<include>Underworld/MaterialIndexField.xml</include>
+	<include>Underworld/ViscosityField.xml</include>
+	<!-- <include>Underworld/TemperatureField.xml</include>
+-->
+	<param name="maxTimeSteps"> 3000 </param> 
+	<param name="dumpEvery"> 50 </param> <!-- Saving every X timesteps -->
+
+	<param name="outputPath">/home/JaimeAlmeida/Underworld/Output/LR30_45</param>
+
+<!--	<param name="outputPath">/home/jaime/Documents/AgeEffects/LowResTest</param> -->
+	<param name="checkpointEvery"> 50 </param> <!-- Allows for a checkpoint system -->
+	<param name="nonLinearTolerance"> 0.01 </param> <!-- Define as 1 for geometry solving -->
+	<param name="dim"> 2 </param> <!-- 2D or 3D -->
+	
+	<!-- Defining the geometric boundaries -->
+	<param name="minX" units="km"> 0.0  </param>
+	<param name="minY" units="km"> 340.0 </param>
+	<param name="minZ" units="km"> 0.0  </param>
+	
+	<param name="maxX" units="km"> 4000.0 </param>
+	<param name="maxY" units="km"> 1000.0 </param>
+	<param name="maxZ" units="km"> 0.0  </param>
+	
+	<!-- Definining the resolution of a model -->
+	<param name="elementResI"> 704 </param> <!-- y resolution -->
+	<param name="elementResJ"> 192 </param>  <!-- x resolution -->
+	<param name="elementResK"> 1 </param>   <!--Not used in 2D -->
+	
+	<param name="Gravity" units="m/s^2"> 9.81 </param>
+
+	<list name="plugins" mergeType="merge">
+		<!--
+		<struct>
+			<param name="Type">Underworld_EulerDeform</param>
+			<param name="Context">context</param>
+		</struct>
+		-->
+		<struct>
+			<param name="Type">StgFEM_FrequentOutput</param>
+			<param name="Context">context</param>
+		</struct>
+		
+		<struct>
+			<param name="Type">Underworld_Vrms</param>
+			<param name="Context">context</param>
+			<param name="GaussSwarm">gaussSwarm</param>
+			<param name="VelocityField">VelocityField</param>
+		</struct>
+		
+		<struct>
+			<param name="Type">StgFEM_CPUTime</param>
+			<param name="Context">context</param>
+		</struct>
+		
+		<struct>
+			<param name="Type">Underworld_PressureCalibration</param>
+			<param name="Context">context</param>
+	      	<param name="UsingTopPressure">true</param>
+		</struct>
+	</list>
+
+
+
+<!--===================================-->
+<!-- THIS IS THE MODEL DEFINITION PART -->
+	<struct name="components" mergeType="merge">
+
+		<struct name="context">
+			<param name="Type">UnderworldContext</param>
+		</struct>
+
+	<struct name="weights" mergeType="replace"> <!-- Particle population control (PPC) -->
+		<param name="Inflow">True</param> <!--important for open boundary-->
+		<param name="Type">PCDVC</param>
+		<param name="resolutionX">20</param>
+		<param name="resolutionY">20</param>
+		<param name="resolutionZ">20</param>
+		<param name="lowerT">5</param>  
+		<param name="upperT">35</param>  
+		<param name="maxDeletions">5</param>
+		<param name="maxSplits">5</param>
+		<param name="splitInInterfaceCells">false</param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>
+	</struct>
+
+<!--just means that scaling is of-->      
+  <struct name="default_scaling">
+	 <param name="Type">Scaling</param>
+	 <param name="spaceCoefficient_meters">       1  </param>
+	 <param name="timeCoefficient_seconds">       1  </param>
+	 <param name="massCoefficient_kilograms">     1  </param>
+	 <param name="temperatureCoefficient_kelvin"> 1  </param>
+	</struct>
+
+<!--MATERIALS AND RHEOLOGIES-->
+	<struct name="everywhere">
+		<param name="Type">Everywhere</param>
+	</struct>
+	
+<!-- Placing a free surface (air layer) -->
+	<element type="struct" name="airShape">
+	      <element type="param" name="Type">Box</element>
+	      <param name="startX" units="km"> 0.0 </param>
+	      <param name="endX" units="km"> 4000 </param>
+	      <param name="startY" units="km"> 1008 </param>
+	      <param name="endY" units="km"> 1032 </param>
+	</element>
+		<element type="struct" name="airViscosity">
+		<element type="param" name="Type">MaterialViscosity</element>
+		<element type="param" name="eta0">1e-3</element>
+	</element>
+	<element type="struct" name="compresibility_air">
+		<element type="param" name="Type">Compressible</element>
+		<element type="param" name="GeometryMesh">linearMesh</element>
+		<element type="param" name="StiffnessMatrix">c_matrix</element>
+		<element type="param" name="Swarm">picIntegrationPoints</element>
+		<element type="param" name="oneOnLambda"> 10.0</element> 
+	</element>  
+	
+	<element type="struct" name="air">
+		<element type="param" name="Type">RheologyMaterial</element>
+		<param name="Shape">airShape</param>
+			<list name="Rheology">
+				<element type="param">airViscosity</element>
+			</list>
+		<param name="DensityLabel"> 0. </param>
+		<param name="DiffusivityLabel"> 1e17</param>
+		<param name="Compressible">compresibility_air</param>
+		<param name="CpLabel" units="J/(kg*K)"> 1e3 </param>	
+		<param name="ThermalExpansivityLabel" units="K^-1"> 0 </param>
+		<param name="Compressibility" units="Pa^-1">1e-11</param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</element> 	
+	
+	<element type="struct" name="stickyShape">
+      <element type="param" name="Type">Box</element>
+      <param name="startX" units="km"> 0.0 </param>
+      <param name="endX" units="km"> 4000 </param>
+      <param name="startY" units="km"> 1000 </param>
+      <param name="endY" units="km"> 1008 </param>
+    </element>
+    <element type="struct" name="stickyViscosity">
+      <element type="param" name="Type">MaterialViscosity</element>
+      <element type="param" name="eta0">1e-4</element>
+    </element>
+    
+    <element type="struct" name="sticky">
+      <element type="param" name="Type">RheologyMaterial</element>
+		<param name="Shape">stickyShape</param>
+      <list name="Rheology">
+        <element type="param">stickyViscosity</element>
+      </list>
+		<param name="DensityLabel"> 0. </param>
+		<param name="DiffusivityLabel"> 1e17 </param>
+		<param name="CpLabel" units="J/(kg*K)"> 0 </param>
+		<param name="ThermalExpansivityLabel" units="K^-1"> 0 </param>
+		<param name="Compressibility" units="Pa^-1">1e-11</param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+   </element> 
+   
+	<!-- END OF THE AIR LAYER -->
+
+
+<!-- Viscosities --><!-- Viscosities --><!-- Viscosities --><!-- Viscosities -->
+	<struct name="viscosityLimiter">
+		<param name="Type">ViscosityLimiter</param>
+		<param name="maxViscosity" units="Pa*s">1e3</param>
+		<param name="minViscosity" units="Pa*s">5e-3</param>
+	</struct>
+	
+	<struct name="overridingCrustViscosity">
+		<param name="Type">PatriceArrhenius</param>
+		<param name="StrainRateInvariantField">StrainRateInvariantField</param>
+		<param name="TemperatureField">TemperatureField</param>
+		<param name="PressureField">PressureField</param>
+		<param name="StressExponent">3.0</param>
+		<param name="PreExponentialFactor" units="(MPa)^-3*s^-1">5.1e16</param>
+		<param name="ActivationEnergy" units="J/mol">2.38e5</param>
+		<param name="ActivationVolume" units="m^3/mol">0</param>
+		<param name="DefaultStrainRateInvariant" units="s^-1">1.0e5</param>
+	</struct>
+	
+	<struct name="PlateauCrustViscosity">
+		<param name="Type">PatriceArrhenius</param>
+		<param name="StrainRateInvariantField">StrainRateInvariantField</param>
+		<param name="TemperatureField">TemperatureField</param>
+		<param name="PressureField">PressureField</param>
+		<!-- Felsic upper crust - Data from Ranalli (1997) - Table 2 -->
+		<param name="StressExponent"> 2.0 </param> 
+		<param name="PreExponentialFactor" units="(MPa)^-3*s^-1">1e16</param>
+		<param name="ActivationEnergy" units="J/mol">1.5e5</param>
+		<!-- End of Ranalli data -->
+		<param name="ActivationVolume" units="m^3/mol">0</param>
+		<param name="DefaultStrainRateInvariant" units="s^-1">1.0e5</param>
+	</struct>
+	
+	<struct name="overridingLithosphereViscosity"> <!-- Dry mantle -->
+		<param name="Type">PatriceArrhenius</param>
+		<param name="StrainRateInvariantField">StrainRateInvariantField</param>
+		<param name="TemperatureField">TemperatureField</param>
+		<param name="PressureField">PressureField</param>
+		<param name="StressExponent"> 3.5 </param> 
+		<param name="PreExponentialFactor" units="(MPa)^-3.5*s^-1">5.49e24</param>
+		<param name="ActivationEnergy" units="J/mol">5.3e5</param>
+		<param name="ActivationVolume" units="m^3/mol">11e-6</param>
+		<param name="DefaultStrainRateInvariant" units="s^-1">1.0e5</param>
+	</struct>
+	
+	<struct name="upperMantleViscosity">
+		<param name="Type">PatriceArrhenius</param>
+		<param name="StrainRateInvariantField">StrainRateInvariantField</param>
+		<param name="TemperatureField">TemperatureField</param>
+		<param name="PressureField">PressureField</param>
+		<param name="StressExponent"> 3.5 </param> <!-- Increase in stress exponent = higher viscosity -->
+		<param name="PreExponentialFactor" units="(MPa)^-3.5*s^-1">5.49e26</param>
+		<param name="ActivationEnergy" units="J/mol">5.3e5</param>
+		<param name="ActivationVolume" units="m^3/mol">11e-6</param>
+		<param name="DefaultStrainRateInvariant" units="s^-1">1.0e5</param>
+	</struct>
+	
+	<struct name="slabLithosphereViscosity">
+		<param name="Type">PatriceArrhenius</param>
+		<param name="StrainRateInvariantField">StrainRateInvariantField</param>
+		<param name="TemperatureField">TemperatureField</param>
+		<param name="PressureField">PressureField</param>
+		<param name="StressExponent"> 3.5 </param> <!-- Increase in stress exponent = higher viscosity -->
+		<param name="PreExponentialFactor" units="(MPa)^-3.5*s^-1">5.49e26</param>
+		<param name="ActivationEnergy" units="J/mol">5.3e5</param>
+		<param name="ActivationVolume" units="m^3/mol">11e-6</param>
+		<param name="DefaultStrainRateInvariant" units="s^-1">1.0e5</param>
+	</struct>
+	
+	<struct name="lowerMantleViscosity">
+		<param name="Type">MaterialViscosity</param>
+		<param name="eta0" units="Pa*s">3e-1</param>
+	</struct>
+	
+	<struct name="viscosityFixLeft">
+		<param name="Type"> ViscosityImposedDepth </param>
+		<param name="Viscosity" units="Pa*s"> 1e-3 </param><!--ridge-->
+		<param name="minx" units="km">  0 </param>
+		<param name="maxx" units="km">  80 </param>
+		<param name="miny" units="km">  930 </param>
+		<param name="maxy" units="km">  1032 </param>
+	</struct>
+
+	<struct name="viscosityFixRight">
+		<param name="Type"> ViscosityImposedDepth </param>
+		<param name="Viscosity" units="Pa*s"> 1e-3 </param><!--ridge-->
+		<param name="minx" units="km">  3920 </param>
+		<param name="maxx" units="km">  4000 </param>
+		<param name="miny" units="km">  930 </param>
+		<param name="maxy" units="km">  1032 </param>
+	</struct>
+	
+	<struct name="upperMantleTopFix">
+		<param name="Type"> ViscosityImposedDepth </param>
+		<param name="Viscosity" units="Pa*s"> 100 </param>
+		<param name="minx" units="km">  30 </param>
+		<param name="maxx" units="km">  3970 </param>
+		<param name="miny" units="km">  982 </param>
+		<param name="maxy" units="km">  996 </param><!--max visco limiter-->
+	</struct>
+	
+	<struct name="upperMantleBotFix">
+		<param name="Type"> ViscosityImposedDepth </param>
+		<param name="Viscosity" units="Pa*s"> 100 </param>
+		<param name="minx" units="km">  80 </param>
+		<param name="maxx" units="km">  3920 </param>
+		<param name="miny" units="km">  976 </param>
+		<param name="maxy" units="km">  982 </param>
+	</struct>
+
+<!-- Yielding --><!-- Yielding --><!-- Yielding --><!-- Yielding --><!-- Yielding --><!-- Yielding -->
+	
+	<struct name="upperMantleYielding">
+		<param name="Type">DruckerPrager</param>
+		<param name="PressureField">PressureField</param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>
+		<param name="StrainRateField">StrainRateField</param>
+		<param name="cohesion" units="MPa">20</param>
+		<param name="frictionCoefficient">0.10 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+	<!--param name="StrainWeakening">strainWeakening</param-->
+	</struct>
+	
+	<struct name="slabLithosphereYielding">
+		<param name="Type">GALEDruckerPrager</param>
+		<param name="PressureField">PressureField</param>
+		<param name="VelocityGradientsField">VelocityGradientsField</param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>
+		<param name="Context">context</param>
+		<param name="StrainWeakening">strainWeakening</param>
+		<param name="StrainRateField">StrainRateField</param>
+		<param name="cohesion" units="MPa">10</param>
+		<param name="cohesionAfterSoftening" units="MPa">1</param>   
+		<param name="frictionCoefficient">0.1</param>
+		<param name="frictionCoefficientAfterSoftening">0.01</param>
+		<param name="minimumViscosity" units="Pa*s">5e-4</param>
+	</struct>
+
+	<struct name="overridingCrustYielding">
+		<param name="Type">DruckerPrager</param>
+		<param name="PressureField">PressureField</param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>
+		<param name="StrainRateField">StrainRateField</param>
+		<param name="cohesion" units="MPa">10</param>
+		<param name="frictionCoefficient">0.2 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+	<!--param name="StrainWeakening">strainWeakening</param-->
+	</struct>
+	
+	<struct name="slabCrustYielding">
+		<param name="Type">DruckerPrager</param>
+		<param name="PressureField">PressureField</param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>
+		<param name="StrainRateField">StrainRateField</param>
+		<param name="cohesion" units="MPa">5</param>
+		<param name="frictionCoefficient">0.1 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+	<!--param name="StrainWeakening">strainWeakening</param-->
+	</struct>
+	
+	
+	<struct name="weakzoneYielding">
+		<param name="Type"> Byerlee </param>
+		<param name="cohesion" units="MPa">5</param>
+		<param name="cohesion2" units="MPa">300</param>
+		<param name="depth2" units="km">282</param>
+		<param name="depth3" units="km">382</param>
+		<param name="depthCoefficient"> 0.0 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+		<param name="StrainRateField"> StrainRateField </param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>            
+		<param name="FeMesh"> linearMesh </param>
+		<param name="BlockGeometry"> geometry </param>
+	<!--<param name="StrainWeakening">strainWeakening</param>-->
+	</struct>
+	
+	<!--struct name="strainWeakening">
+      <param name="Type">StrainWeakening</param>
+      <param name="TimeIntegrator">timeIntegrator</param>
+      <param name="MaterialPointsSwarm">materialSwarm</param>
+      <param name="finalSofteningStrain">0.5</param>
+      <param name="initialDamageFraction">0.0</param>
+      <param name="initialDamageWavenumber">0.0</param>
+      <param name="initialDamageFactor">0.0</param>
+      <param name="healingRate"> 0 </param>
+    </struct-->
+	
+<!-- Stress Limiters --><!-- Stress Limiters --><!-- Stress Limiters --><!-- Stress Limiters --><!-- Stress Limiters -->
+
+	<struct name="upperMantlePeierls">
+		<param name="Type"> Byerlee </param>
+		<param name="cohesion" units="MPa">300</param>
+		<param name="depthCoefficient"> 0.0 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+		<param name="StrainRateField"> StrainRateField </param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>      
+		<param name="FeMesh"> linearMesh </param>
+		<param name="BlockGeometry"> geometry </param>
+	</struct>
+	
+	<struct name="overridingCrustPeierls">
+		<param name="Type"> Byerlee </param>
+		<param name="cohesion" units="MPa">100</param>
+		<param name="depthCoefficient"> 0.0 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+		<param name="StrainRateField"> StrainRateField </param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>            
+		<param name="FeMesh"> linearMesh </param>
+		<param name="BlockGeometry"> geometry </param>
+	</struct>
+	
+	<struct name="slabCrustPeierls">
+		<param name="Type"> Byerlee </param>
+		<param name="cohesion" units="MPa">5</param>
+		<param name="cohesion2" units="MPa">100</param>
+		<param name="depth2" units="km">282</param>
+		<param name="depth3" units="km">382</param>
+		<param name="depthCoefficient"> 0.0 </param>
+		<param name="minimumViscosity" units="Pa*s">1e-4</param>
+		<param name="StrainRateField"> StrainRateField </param>
+		<param name="MaterialPointsSwarm">materialSwarm</param>            
+		<param name="FeMesh"> linearMesh </param>
+		<param name="BlockGeometry"> geometry </param>
+	</struct>
+	
+<!--Defining shapes--><!--Defining shapes--><!--Defining shapes--><!--Defining shapes-->
+	
+	<struct name="upperMantleShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 0.0 </param>
+		<param name="endX" units="km"> 4000.0 </param>
+		<param name="startY" units="km"> 340.0</param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+	
+	<struct name="overridingCrustShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				50 1000
+				300 988
+				1940 988
+				1970 1000
+			</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="slabCrustShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				2000 1000
+				1810 940
+				1704 835				
+				1714.1 828.3
+				1818.1 927.3				
+				2000 988
+				3700 988
+				3950 1000
+			</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="weakzoneShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				2000 1000
+				1810 940
+				1704 835
+				1694 835
+				1765 910
+				1810 950
+				1910 980
+				1970 1000
+		</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="overridingLithosphereShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				50 1000
+				300 940
+				1780 940
+				1810 940
+				1940 990
+				300 990
+		</asciidata>
+		</list>
+	</struct>
+	
+	
+	
+	<struct name="slabLithosphereShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				2020 920
+				1850 870
+				1760 780
+				1714.1 828.3				
+				1818.1 927.3
+				2000 988
+				2700 988	
+				3400 988
+				3700 988
+				3950 1000
+				3700 920
+				3400 920			
+				2700 920
+		</asciidata>
+		</list>
+	</struct>
+	 
+	 
+	<struct name="PlateauCrustShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				2700 1000
+				2700 988
+				2850 980
+				3225 980
+				3400 988
+				3400 1000
+		</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="PlateauLithosphereShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+		<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				2700 988
+				2850 980
+				3225 980
+				3400 988
+				3400 920
+				3225 890
+				2850 890
+				2700 920
+		</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="lowerMantleShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 0.0 </param>
+		<param name="endX" units="km"> 4000.0 </param>
+		<param name="startY" units="km"> 0</param>
+		<param name="endY" units="km"> 340.0  </param>
+	</struct>
+
+
+	<!--Defining thermal shapes--><!--Defining thermal shapes--><!--Defining thermal shapes-->
+	
+	<struct name="overridingRidgeTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 50.0 </param>
+		<param name="endX" units="km"> 300.0 </param>
+		<param name="startY" units="km"> 910</param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+	
+	<struct name="overridingLithosphereTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 300.0 </param>
+		<param name="endX" units="km"> 1970.0 </param>
+		<param name="startY" units="km"> 910.0 </param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+	
+	
+	<struct name="slabLithosphereLeftTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 1970.0 </param>
+		<param name="endX" units="km"> 2700.0 </param>
+		<param name="startY" units="km"> 850.0 </param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+	
+	<struct name="slabLithosphereRightTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 3400.0 </param>
+		<param name="endX" units="km"> 3700.0 </param>
+		<param name="startY" units="km"> 850.0 </param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+
+	<struct name="plateauTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 2700.0 </param>
+		<param name="endX" units="km"> 3400.0 </param>
+		<param name="startY" units="km"> 850.0 </param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+<!--
+	<struct name="plateauTShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+					2700 1000
+					2700 920
+					2850 890
+					3225 890
+					3400 920
+					3400 1000
+			</asciidata>
+		</list>
+	</struct>
+	-->
+	<struct name="slabRidgeTShape">
+		<param name="Type">Box</param>
+		<param name="startX" units="km"> 3700.0 </param>
+		<param name="endX" units="km"> 3950.0 </param>
+		<param name="startY" units="km"> 850.0 </param>
+		<param name="endY" units="km"> 1000.0  </param>
+	</struct>
+
+	<struct name="slabPerturbationUpTShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+				1850 870
+				1817 929
+				1970 970
+				1970 910
+			</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="slabPerturbationDownTShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+					1760 780
+					1713 830
+					1817 929
+					1850 870
+			</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="crustPerturbationUpTShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+					1817 929
+					1810 950
+					1970 1000
+					1970 970
+			</asciidata>
+		</list>
+	</struct>
+	
+	<struct name="crustPerturbationDownTShape">
+		<param name="Type">PolygonShape</param>
+		<list name="vertices">
+			<asciidata>
+				<columnDefinition name = "x" type="double" units="km"/>
+				<columnDefinition name = "y" type="double" units="km"/>
+					1713 830
+					1817 929
+					1810 950
+					1694 835
+			</asciidata>
+		</list>
+	</struct>
+	
+	
+	
+<!-- Material Rheologies --><!-- Material Rheologies --><!-- Material Rheologies --><!-- Material Rheologies -->
+
+	<struct name="upperMantleRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">upperMantleShape</param>
+		<list name="Rheology">
+			<param> upperMantleViscosity</param>
+			<param> upperMantleYielding </param>
+			<param> upperMantlePeierls </param>
+			<param> viscosityFixLeft </param>
+			<param> viscosityFixRight </param>
+			<param> upperMantleTopFix </param>
+			<param> upperMantleBotFix</param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> upperMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.022e60 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+
+	<struct name="overridingLithosphereRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">overridingLithosphereShape</param>
+		<list name="Rheology">
+			<param> overridingLithosphereViscosity</param>
+			<param> upperMantleYielding </param>
+			<param> upperMantlePeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> upperMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.022e60 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+	
+	<struct name="slabLithosphereRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">slabLithosphereShape</param>
+		<list name="Rheology">
+			<param> slabLithosphereViscosity</param>
+			<param> slabLithosphereYielding </param>
+			<param> upperMantlePeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> upperMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.022e60 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+
+	<struct name="slabCrustRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">slabCrustShape</param>
+		<list name="Rheology">
+			<param> upperMantleViscosity</param>
+			<param> slabCrustYielding </param>
+			<param> slabCrustPeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> upperMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.25e60 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+
+	<struct name="overridingCrustRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">overridingCrustShape</param>
+		<list name="Rheology">
+			<param> overridingCrustViscosity</param>
+			<param> overridingCrustYielding </param>
+			<param> overridingCrustPeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> overridingCrustDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 1.5e16 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct>
+
+	<struct name="weakzoneRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">weakzoneShape</param>
+		<list name="Rheology">
+			<param> upperMantleViscosity</param>
+			<param> weakzoneYielding </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> weakzoneDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 1.5e16 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct>
+	
+	<struct name="lowerMantleRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">lowerMantleShape</param>
+		<list name="Rheology">
+			<param> lowerMantleViscosity</param>
+		</list>
+		<param name="DensityLabel"> lowerMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.022e16 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct>
+	
+	<struct name="PlateauCrustRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape"> PlateauCrustShape </param>
+		<list name="Rheology">
+			<param> PlateauCrustViscosity</param>
+			<param> overridingCrustYielding </param>
+			<param> overridingCrustPeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> PlateauCrustDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 1.5e16 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+	
+	<struct name="PlateauLithosphereRheology">
+		<param name="Type">RheologyMaterial</param>
+		<param name="Shape">PlateauLithosphereShape</param>
+		<list name="Rheology">
+			<param> slabLithosphereViscosity</param>
+			<param> slabLithosphereYielding </param>
+			<param> upperMantlePeierls </param>
+			<param> viscosityLimiter</param>
+		</list>
+		<param name="DensityLabel"> PlateauMantleDensity </param>
+		<param name="DiffusivityLabel"> TheDiffusivity </param>
+		<param name="CpLabel"> TheCp </param>
+		<param name="ThermalExpansivityLabel"> TheAlpha </param>
+		<param name="RadiogenicHeatProductionLabel" units="W/(m*m*m)"> 0.022e60 </param>
+		<param name="LatentHeatFusionLabel"> 0.0 </param>
+	</struct> 
+	
+<!-- Passive Tracers --><!-- Passive Tracers --><!-- Passive Tracers --><!-- Passive Tracers -->
+	
+	<!-- Defining the type of tracer -->
+	
+	<struct name="passiveSwarmMovementHandler">
+		<param name="Type"> ParticleMovementHandler </param>
+	</struct>
+	<struct name="ElementCellLayoutTracer">
+		<param name="Type">ElementCellLayout</param>
+		<param name="Mesh">linearMesh</param>
+	</struct>
+	
+	<struct name="slabCrust">
+	<param name="Type">LineParticleLayout</param> 
+	<param name="totalInitialParticles">360</param>
+	<list name="vertices">
+		<asciidata>
+			<columnDefinition name = "x" type="double" units="km"/>
+			<columnDefinition name = "y" type="double" units="km"/>
+			<!--columnDefinition name = "z" type="double"/-->
+			2000 979.5
+			3700 979.5
+		</asciidata>
+	</list>
+	</struct>
+	
+	<struct name="slabMantle">
+	<param name="Type">LineParticleLayout</param> 
+	<param name="totalInitialParticles">360</param>
+	<list name="vertices">
+		<asciidata>
+			<columnDefinition name = "x" type="double" units="km"/>
+			<columnDefinition name = "y" type="double" units="km"/>
+			<!--columnDefinition name = "z" type="double"/-->
+			2000 950
+			3700 950
+		</asciidata>
+	</list>
+	</struct>
+
+	<struct name="overridingCrust">
+	<param name="Type">LineParticleLayout</param> 
+	<param name="totalInitialParticles">360</param>
+	<list name="vertices">
+		<asciidata>
+			<columnDefinition name = "x" type="double" units="km"/>
+			<columnDefinition name = "y" type="double" units="km"/>
+			<!--columnDefinition name = "z" type="double"/-->
+			300 999.0
+			2000 999.0
+		</asciidata>
+	</list>
+	</struct>
+	
+	<struct name="subductionModel">
+		<param name="Type">UnionParticleLayout</param>
+		<list name="ParticleLayoutList">
+			<param>slabCrust</param>
+			<param>overridingCrust</param>
+			<param>slabMantle</param>
+		</list>
+	</struct>
+	
+	<struct name="passiveTracerSwarm">
+		<param name="Type">MaterialPointsSwarm</param>
+		<param name="CellLayout">ElementCellLayoutTracer</param>
+		<param name="ParticleLayout">subductionModel</param>
+		<param name="FiniteElement_Mesh">linearMesh</param>
+		<param name="FeMesh">elementMesh</param>
+		<list name="ParticleCommHandlers">
+			<param>passiveSwarmMovementHandler</param>
+		</list>
+	</struct>
+	
+	<struct name="passiveTracerAdvect">
+		<param name="Type">SwarmAdvector</param>
+		<param name="Swarm">passiveTracerSwarm</param>
+		<param name="TimeIntegrator">timeIntegrator</param>
+		<param name="VelocityField">VelocityField</param>
+	</struct>
+	<struct name="uso">
+		<param name="Type">Underworld_SwarmOutput</param>
+		<param name="Swarm">passiveTracerSwarm</param>
+		<!--<param name="mode">PARTICLE_TRACE</param>-->
+		<param name="mode">ALL_SWARM</param>
+		<list name="FeVariables">
+			<param>PressureField</param>
+			<param>VelocityField</param>
+		</list>
+	</struct>
+	
+<!-- Temperature Field --><!-- Temperature Field --><!-- Temperature Field --><!-- Temperature Field -->
+	<struct name="tempPpc">
+			<param name="Type">Ppc_Variable</param>
+			<param name="FieldVariable">TemperatureField</param>
+			<param name="Manager">thePpcManager</param>
+	</struct>
+	
+	<struct name="TheDiffusivity">
+		<param name="Type">Ppc_Constant</param>
+		<param name="Value" units="m*m/s">1e16</param>
+	</struct>
+	
+	<struct name="TheCp">
+		<param name="Type">Ppc_Constant</param>
+		<param name="Value" units="J/(kg*K)">1e3</param>
+	</struct>
+	
+	<struct name="TheAlpha"> <!-- Thermal expansion -->
+		<param name="Type">Ppc_Constant</param>
+		<param name="Value" units="K^-1">3e-5</param>
+	</struct>
+	
+	<struct name="TheBeta"> <!-- Thermal compressibilty -->
+		<param name="Type">Ppc_Constant</param>
+		<param name="Value" units="Pa^-1">1e-11</param>
+	</struct>
+
+
+<!-- Densities --><!-- Densities --><!-- Densities --><!-- Densities --><!-- Densities --><!-- Densities -->
+
+	<struct name="upperMantleDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">3300</param>
+		<param name="ReferencePressure">0.0</param>
+    </struct>
+	
+	<struct name="overridingCrustDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">3300</param> <!-- was 2900 -->
+		<param name="ReferencePressure">0.0</param>
+	</struct>
+	
+	<struct name="lowerMantleDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">3650</param>
+		<param name="ReferencePressure">0.0</param>
+	</struct>
+	
+	<struct name="weakzoneDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>         
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">3330</param>
+		<param name="ReferencePressure">0.0</param>
+	</struct>
+
+	<struct name="PlateauCrustDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">2800</param><!--3240-->
+		<param name="ReferencePressure">0.0</param>
+	</struct>
+
+	<struct name="PlateauMantleDensity">
+		<param name="Type">Ppc_LinearDensity</param>
+		<param name="Temperature">tempPpc</param>
+		<param name="Compressibility">TheBeta</param>
+		<param name="ThermalExpansivity">TheAlpha</param>
+		<param name="Pressure"> default_pressure_ppc </param>
+		<param name="ExternalFunction"> 0.0 </param>
+		<param name="ReferenceTemperature" units="K">273</param>
+		<param name="ReferenceDensity" units="kg/m^3">3240</param><!-- V1 was 3240 -->
+		<param name="ReferencePressure">0.0</param>
+	</struct>
+
+<!--END OF MATERIALS AND RHEOLOGIES-->
+
+	<!-- SCALING: 'outputUnits' for the StrainRateInvariantField in 1/seconds -->
+	<struct name="StrainRateInvariantField" mergeType="merge">
+		<param name="outputUnits" mergeType="replace">s^-1</param>
+	</struct>
+
+	</struct>
+<!-- THIS IS THE END OF THE MODEL DEFINITION PART -->
+<!--==============================================-->
+
+
+	<!--   choose what to checkpoint -->
+	<list name="FieldVariablesToCheckpoint" mergeType="merge">
+		<param>ViscosityField</param>
+		<param>MaterialIndexField</param>
+		<param>HasYieldedField</param>
+		<param>TemperatureField</param>
+	</list>
+
+	<!-- general decomposition parameters -->
+	<param name="shadowDepth"> 1 </param>
+	<param name="allowUnbalancing"> True </param>
+	<param name="buildElementNodeTbl"> True </param>
+	<param name="particleLayoutType"> random </param>
+	<param name="particlesPerCell"> 60 </param> 
+	<param name="seed"> 13 </param>
+
+
+	<include> Model11_V.xml</include> 	<!-- Including the Velocity files. Important -->
+	<include> Model11_T.xml</include>
+
+<!--
+	<include>Underworld/BaseApps/SemiLagrangianADESolverHijack.xml </include>
+ 	<struct name="components" mergeType="merge">
+		<struct name="diffusivityPpc" mergeType="replace">
+			<param name="Type">Ppc_Constant</param>
+			<param name="Value" units="m*m/s">1e16</param>
+		</struct>
+	</struct>
+-->
+
+    <!-- Thermal equations -->
+     <struct name="components" mergeType="merge">
+        <struct name="sourceTerms_thermalEqn">
+            <param name="Type">Ppc_Operation</param>
+            <param name="Operation"> + </param>
+            <list name="Properties">
+                <param> radiogenicHeating </param>
+            </list>
+        </struct>
+
+        <struct name="radiogenicHeating">
+            <param name="Type">Ppc_Operation</param>
+            <param name="Operation"> / </param>
+            <list name="Properties">
+                <param>RadiogenicHeatProductionLabel</param>
+                <param>rho_cp</param>
+            </list>
+        </struct>
+        <struct name="rho_cp">
+            <param name="Type">Ppc_Operation</param>
+            <param name="Operation"> * </param>
+            <list name="Properties">
+                <param>DensityLabel</param>
+                <param>CpLabel</param>
+            </list>
+        </struct>
+
+        <struct name="thermalEqn">
+            <param name="Type">VectorAssemblyTerm_NA__F</param>
+            <param name="ForceVector">residual</param>
+            <param name="functionLabel">sourceTerms_thermalEqn</param>
+            <param name="Swarm">picIntegrationPoints</param>
+            <param name="Manager">default_ppcManager</param>
+        </struct>
+
+        <struct name="viscousHeating">
+            <param name="Type"> ViscousHeatingTermPpc </param>
+            <param name="ForceVector">residual</param>
+            <param name="EnergyEqn">EnergyEqn</param>
+            <param name="Swarm">picIntegrationPoints</param>
+            <param name="DeviatoricStressField"> recoveredDeviatoricStressField </param>
+            <param name="StrainRateField"> StrainRateField </param>
+            <param name="DensityLabel"> DensityLabel </param>
+            <param name="CpLabel"> CpLabel </param>
+            <param name="ScalingFactor"> 1e22 </param>
+        </struct>
+
+       <struct name="adiabaticHeating">
+            <param name="Type"> AdiabaticHeatingTermPpc </param>
+            <param name="ForceVector"> residual </param>
+            <param name="EnergyEqn"> EnergyEqn </param>
+            <param name="Swarm"> picIntegrationPoints </param>
+            <param name="VelocityField"> VelocityField </param>
+            <param name="TemperatureField"> TemperatureField </param>
+            <param name="PressureField"> PressureField </param>
+            <param name="CpLabel"> CpLabel </param>
+            <param name="ThermalExpansivityLabel"> ThermalExpansivityLabel </param>
+            <param name="ExternalFunction"> 1.0 </param>
+            <param name="ScalingFactor"> 1e22 </param>
+        </struct>
+
+        <struct name="defaultResidualForceTerm" mergeType="replace">
+            <param name="Type">SUPGAdvDiffTermPpc</param>
+            <param name="ForceVector">residual</param>
+            <param name="EnergyEqn">EnergyEqn</param>
+            <param name="Swarm">picIntegrationPoints</param>
+            <param name="VelocityField">VelocityField</param>
+            <param name="PhiField">TemperatureField</param>
+            <param name="DiffusivityLabel">DiffusivityLabel</param>
+        </struct>
+    </struct>
+
+
+
+    <struct name="components" mergeType="merge">
+        <struct name="default_pressure_ppc">
+            <param name="Type">Ppc_Variable</param>
+            <param name="FieldVariable"> PressureField </param>
+            <param name="ReferenceSwarm"> passiveTracerSwarm </param>
+        </struct>
+    </struct>
+
+    <struct name="components" mergeType="merge">
+        <struct name="diffusivityPpc" mergeType="replace">
+            <param name="Type">Ppc_Constant</param>
+            <param name="Value" units="m*m/s">1e16</param>
+        </struct>
+    </struct>
+    
+
+	
+	
+<!-- Stability Factor -->
+	<param name="courantFactor">0.5</param>	<!--Stability criterion. should not be above 0.5 -->
+	<struct name="components" mergeType="merge">
+		<struct name="linearMeshGenerator" mergeType="merge">
+			<param name="periodic_x">True</param>
+		</struct>
+		<struct type="struct" name="sourceTerm" mergeType="replace">
+			<param name="Type">DummyComponent</param>
+		</struct>
+ 	</struct>
+
+</StGermainData>

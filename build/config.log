@@ -1,0 +1,1276 @@
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/config.py,line 108:
+	Configure(confdir = .sconf_temp)
+
+Configuring using:
+  config/scons/scons.py --config=force -f SConfigure --mpi-dir=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1 --hdf5-dir=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2 --petsc-dir=/home/jalmeida/uw_home/software/petsc-3.5.4 --with-glucifer=0
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/cc.py,line 12:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking whether the C compiler works
+.sconf_temp/conftest_0.c <-
+  |
+  |int main()
+  |{
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_0.o -c .sconf_temp/conftest_0.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'libm'.
+  Static missing: ['m']
+  Shared missing: ['m']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'libm'.
+  Static missing: ['m']
+  Shared missing: ['m']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'libm'.
+  Static missing: ['m']
+  Shared missing: ['m']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'libm'.
+  Static missing: ['m']
+  Shared missing: ['m']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_1.c <-
+  |
+  |
+  |#include "math.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_1.o -c -Wall .sconf_temp/conftest_1.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_1 .sconf_temp/conftest_1.o -lm
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_2.c <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_2.o -c -Wall -DHAVE_LIBM .sconf_temp/conftest_2.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+.sconf_temp/conftest_2.c:3:27: fatal error: libxml/parser.h: No such file or directory
+ #include "libxml/parser.h"
+                           ^
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C++ library None... 
+.sconf_temp/conftest_3.cpp <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+g++ -o .sconf_temp/conftest_3.o -c -Wall -DHAVE_LIBM .sconf_temp/conftest_3.cpp
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+.sconf_temp/conftest_3.cpp:3:27: fatal error: libxml/parser.h: No such file or directory
+ #include "libxml/parser.h"
+                           ^
+compilation terminated.
+scons: Configure: no
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_4.c <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_4.o -c -Wall -DHAVE_LIBM -I/usr/include/libxml2 .sconf_temp/conftest_4.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_4 .sconf_temp/conftest_4.o -lxml2 -lm
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for MPI_Finalize() in C library None... 
+.sconf_temp/conftest_5.c <-
+  |
+  |
+  |#include "mpi.h"
+  |
+  |int
+  |main() {
+  |  MPI_Finalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_5.o -c -Wall -DHAVE_LIBM -DHAVE_LIBXML2 -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include .sconf_temp/conftest_5.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_5 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_5.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -lmpi -lxml2 -lm
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_6.c <-
+  |
+  |
+  |#include "hdf5.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_6.o -c -Wall -DHAVE_LIBM -DHAVE_LIBXML2 -DHAVE_MPI -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include .sconf_temp/conftest_6.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_6 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib .sconf_temp/conftest_6.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -lhdf5 -lmpi -lxml2 -lm
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/lib64']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib64']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'spatialdata'.
+  Static missing: ['spatialdata']
+  Shared missing: ['spatialdata']
+  Looked in: ['/usr/local/lib64']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python']
+  Shared missing: ['python']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.7']
+  Shared missing: ['python2.7']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.6']
+  Shared missing: ['python2.6']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.5']
+  Shared missing: ['python2.5']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python']
+  Shared missing: ['python']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.7']
+  Shared missing: ['python2.7']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.6']
+  Shared missing: ['python2.6']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.5']
+  Shared missing: ['python2.5']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python']
+  Shared missing: ['python']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.7']
+  Shared missing: ['python2.7']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.6']
+  Shared missing: ['python2.6']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.5']
+  Shared missing: ['python2.5']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python']
+  Shared missing: ['python']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.7']
+  Shared missing: ['python2.7']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.6']
+  Shared missing: ['python2.6']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python2.5']
+  Shared missing: ['python2.5']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'Python'.
+  Static missing: ['python']
+  Shared missing: ['python']
+  Looked in: ['/usr/lib64']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_7.c <-
+  |
+  |
+  |#include "Python.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_7.o -c -Wall -DHAVE_LIBM -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/usr/include/python2.7 .sconf_temp/conftest_7.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_7 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib .sconf_temp/conftest_7.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -lpython2.7 -lhdf5 -lmpi -lxml2 -lm
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'PETSc'.
+  Static missing: ['petscsnes', 'petscksp', 'petscdm', 'petscmat', 'petscvec', 'petsc']
+  Shared missing: ['petscsnes', 'petscksp', 'petscdm', 'petscmat', 'petscvec']
+  Looked in: ['/home/jalmeida/uw_home/software/petsc-3.5.4/lib', '/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for PetscInitialize(NULL, NULL, NULL, NULL);.. in C library None... 
+.sconf_temp/conftest_8.c <-
+  |
+  |
+  |#include "mpi.h"
+  |#include "petsc.h"
+  |#include "petscvec.h"
+  |#include "petscmat.h"
+  |#include "petscksp.h"
+  |#include "petscsnes.h"
+  |
+  |int
+  |main() {
+  |  PetscInitialize(NULL, NULL, NULL, NULL);
+  |PetscFinalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_8.o -c -Wall -DHAVE_LIBM -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PYTHON -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/usr/include/python2.7 -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include .sconf_temp/conftest_8.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_8 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_8.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lpython2.7 -lhdf5 -lmpi -lxml2 -lm -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s -lpetsc
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+scons: Configure: Checking for PetscInitialize(NULL, NULL, NULL, NULL);.. in C library None... 
+.sconf_temp/conftest_9.c <-
+  |
+  |
+  |#include "mpi.h"
+  |#include "petsc.h"
+  |#include "petscvec.h"
+  |#include "petscmat.h"
+  |#include "petscksp.h"
+  |#include "petscsnes.h"
+  |
+  |int
+  |dummy_func() {
+  |  PetscInitialize(NULL, NULL, NULL, NULL);
+  |PetscFinalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_9.os -c -Wall -fPIC -DHAVE_LIBM -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PYTHON -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/usr/include/python2.7 -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include .sconf_temp/conftest_9.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/libconftest_9.so -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -shared .sconf_temp/conftest_9.os -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lpython2.7 -lhdf5 -lmpi -lxml2 -lm -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s -lpetsc
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/lib64/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/lib/linux-gnu-c-opt']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec', 'petscext_helpers']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Shared missing: ['petscext_utils', 'petscext_snes', 'petscext_ksp', 'petscext_pc', 'petscext_mat', 'petscext_vec']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']
+  Failed to find static or shared libraries for 'PETScExt'.
+  Static missing: ['petscext']
+  Shared missing: ['petscext']
+  Looked in: ['/usr/local/linux-gnu-c-opt/lib']

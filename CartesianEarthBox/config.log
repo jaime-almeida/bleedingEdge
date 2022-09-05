@@ -1,0 +1,1350 @@
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/config.py,line 108:
+	Configure(confdir = .sconf_temp)
+
+Configuring using:
+  config/scons/scons.py --config=force -f SConfigure --build-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --pcu-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --stgermain-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --stgdomain-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --stgfem-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --picellerator-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --underworld-dir=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build --mpi-dir=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1 --hdf5-dir=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2 --petsc-dir=/home/jalmeida/uw_home/software/petsc-3.5.4
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/cc.py,line 12:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking whether the C compiler works
+.sconf_temp/conftest_0.c <-
+  |
+  |int main()
+  |{
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_0.o -c .sconf_temp/conftest_0.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/i386-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/x86_64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+  Failed to find static or shared libraries for 'libXML2'.
+  Static missing: ['xml2']
+  Shared missing: ['xml2']
+  Looked in: ['/usr/lib/amd64-linux-gnu']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_1.c <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_1.o -c -Wall .sconf_temp/conftest_1.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+.sconf_temp/conftest_1.c:3:27: fatal error: libxml/parser.h: No such file or directory
+ #include "libxml/parser.h"
+                           ^
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C++ library None... 
+.sconf_temp/conftest_2.cpp <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+g++ -o .sconf_temp/conftest_2.o -c -Wall .sconf_temp/conftest_2.cpp
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+.sconf_temp/conftest_2.cpp:3:27: fatal error: libxml/parser.h: No such file or directory
+ #include "libxml/parser.h"
+                           ^
+compilation terminated.
+scons: Configure: no
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_3.c <-
+  |
+  |
+  |#include "libxml/parser.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_3.o -c -Wall -I/usr/include/libxml2 .sconf_temp/conftest_3.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_3 .sconf_temp/conftest_3.o -lxml2
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for MPI_Finalize() in C library None... 
+.sconf_temp/conftest_4.c <-
+  |
+  |
+  |#include "mpi.h"
+  |
+  |int
+  |main() {
+  |  MPI_Finalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_4.o -c -Wall -DHAVE_LIBXML2 -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include .sconf_temp/conftest_4.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_4 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_4.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -lmpi -lxml2
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_5.c <-
+  |
+  |
+  |#include "hdf5.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_5.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include .sconf_temp/conftest_5.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_5 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib .sconf_temp/conftest_5.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -lhdf5 -lmpi -lxml2
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+  Failed to find static or shared libraries for 'PETSc'.
+  Static missing: ['petscsnes', 'petscksp', 'petscdm', 'petscmat', 'petscvec', 'petsc']
+  Shared missing: ['petscsnes', 'petscksp', 'petscdm', 'petscmat', 'petscvec']
+  Looked in: ['/home/jalmeida/uw_home/software/petsc-3.5.4/lib', '/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib']
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for PetscInitialize(NULL, NULL, NULL, NULL);.. in C library None... 
+.sconf_temp/conftest_6.c <-
+  |
+  |
+  |#include "mpi.h"
+  |#include "petsc.h"
+  |#include "petscvec.h"
+  |#include "petscmat.h"
+  |#include "petscksp.h"
+  |#include "petscsnes.h"
+  |
+  |int
+  |main() {
+  |  PetscInitialize(NULL, NULL, NULL, NULL);
+  |PetscFinalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_6.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include .sconf_temp/conftest_6.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_6 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_6.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+scons: Configure: Checking for PetscInitialize(NULL, NULL, NULL, NULL);.. in C library None... 
+.sconf_temp/conftest_7.c <-
+  |
+  |
+  |#include "mpi.h"
+  |#include "petsc.h"
+  |#include "petscvec.h"
+  |#include "petscmat.h"
+  |#include "petscksp.h"
+  |#include "petscsnes.h"
+  |
+  |int
+  |dummy_func() {
+  |  PetscInitialize(NULL, NULL, NULL, NULL);
+  |PetscFinalize();
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_7.os -c -Wall -fPIC -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include .sconf_temp/conftest_7.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/libconftest_7.so -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -shared .sconf_temp/conftest_7.os -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_8.c <-
+  |
+  |
+  |#include "pcu/pcu.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_8.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_8.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_8 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_8.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_9.c <-
+  |
+  |
+  |#include "StGermain/StGermain.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_9.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -DHAVE_PCU -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_9.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_9 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_9.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lStGermain -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_10.c <-
+  |
+  |
+  |#include "StGermain/StGermain.h"
+  |#include "StgDomain/StgDomain.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_10.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -DHAVE_PCU -DHAVE_STGERMAIN -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_10.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_10 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_10.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lStgDomain -lStGermain -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_11.c <-
+  |
+  |
+  |#include "StGermain/StGermain.h"
+  |#include "StgDomain/StgDomain.h"
+  |#include "StgFEM/StgFEM.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_11.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -DHAVE_PCU -DHAVE_STGERMAIN -DHAVE_STGDOMAIN -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_11.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_11 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_11.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lStgFEM -lStgDomain -lStGermain -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_12.c <-
+  |
+  |
+  |#include "StGermain/StGermain.h"
+  |#include "StgDomain/StgDomain.h"
+  |#include "StgFEM/StgFEM.h"
+  |#include "PICellerator/PICellerator.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_12.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -DHAVE_PCU -DHAVE_STGERMAIN -DHAVE_STGDOMAIN -DHAVE_STGFEM -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_12.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_12 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_12.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lPICellerator -lStgFEM -lStgDomain -lStGermain -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+
+file /home/jalmeida/uw_home/software/bleedingEdge_nimbus/CartesianEarthBox/config/Package.py,line 155:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C library None... 
+.sconf_temp/conftest_13.c <-
+  |
+  |
+  |#include "StGermain/StGermain.h"
+  |#include "StgDomain/StgDomain.h"
+  |#include "StgFEM/StgFEM.h"
+  |#include "PICellerator/PICellerator.h"
+  |#include "Underworld/Underworld.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_13.o -c -Wall -DHAVE_LIBXML2 -DHAVE_MPI -DHAVE_HDF5 -DHAVE_PETSC -DHAVE_PCU -DHAVE_STGERMAIN -DHAVE_STGDOMAIN -DHAVE_STGFEM -DHAVE_PICELLERATOR -I/usr/include/libxml2 -I/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/include -I/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/include -I/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/include -I/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/include .sconf_temp/conftest_13.c
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+gcc -o .sconf_temp/conftest_13 -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -Wl,-rpath=/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/lib -Wl,-rpath=/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath=/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -Wl,-rpath,/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -Wl,-rpath,/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib .sconf_temp/conftest_13.o -L/share/apps/progs/gfortran_4.8.5/openmpi_v3.0.1/lib -L/share/apps/progs/gfortran_4.8.5/hdf5_v1.10.2/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/lib -L/home/jalmeida/uw_home/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/home/jalmeida/UW_tor/software/petsc-3.5.4/linux-gnu-c-opt/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/home/jalmeida/uw_home/software/bleedingEdge_nimbus/build/lib -lUnderworld -lPICellerator -lStgFEM -lStgDomain -lStGermain -lpcu -lhdf5 -lmpi -lxml2 -lpetsc -lcmumps -ldmumps -lsmumps -lzmumps -lmumps_common -lpord -lscalapack -lflapack -lfblas -lparmetis -lmetis -lX11 -lpthread -lssl -lcrypto -lm -lmpi_usempi -lmpi_mpifh -lgfortran -lquadmath -lstdc++ -ldl -lgcc_s
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+	-H|--help		this usage info
+	-V|--version		modules version & configuration options
+	-f|--force		force active dependency resolution
+	-t|--terse		terse    format avail and list format
+	-l|--long		long     format avail and list format
+	-h|--human		readable format avail and list format
+	-v|--verbose		enable  verbose messages
+	-s|--silent		disable verbose messages
+	-c|--create		create caches for avail and apropos
+	-i|--icase		case insensitive
+	-u|--userlvl <lvl>	set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+	+ add|load		modulefile [modulefile ...]
+	+ rm|unload		modulefile [modulefile ...]
+	+ switch|swap		[modulefile1] modulefile2
+	+ display|show		modulefile [modulefile ...]
+	+ avail			[modulefile [modulefile ...]]
+	+ use [-a|--append]	dir [dir ...]
+	+ unuse			dir [dir ...]
+	+ update
+	+ refresh
+	+ purge
+	+ list
+	+ clear
+	+ help			[modulefile [modulefile ...]]
+	+ whatis		[modulefile [modulefile ...]]
+	+ apropos|keyword	string
+	+ initadd		modulefile [modulefile ...]
+	+ initprepend		modulefile [modulefile ...]
+	+ initrm		modulefile [modulefile ...]
+	+ initswitch		modulefile1 modulefile2
+	+ initlist
+	+ initclear
+
+scons: Configure: yes
+
+

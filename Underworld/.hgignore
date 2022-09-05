@@ -1,0 +1,60 @@
+# use glob syntax.
+syntax: glob
+
+*~
+*.pyc
+._*
+.DS_Store
+.sconsign.tmp
+*.swp
+
+# Model running related
+InputFiles/StGermain
+InputFiles/Underworld
+InputFiles/log
+testLogs
+
+# Regression testing related
+SysTest/RegressionTests/expected/*/window.00000.png
+SysTest/RegressionTests/expected/*/input*.xml
+SysTest/RegressionTests/expected/*/FrequentOutput.dat
+SysTest/RegressionTests/expected/*/EP.info
+SysTest/RegressionTests/expected/*/window.mpeg
+SysTest/RegressionTests/lowres_expected/*/window.00000.png
+SysTest/RegressionTests/lowres_expected/*/input*.xml
+SysTest/RegressionTests/lowres_expected/*/FrequentOutput.dat
+SysTest/RegressionTests/lowres_expected/*/EP.info
+SysTest/RegressionTests/lowres_expected/*/window.mpeg
+SysTest/RegressionTests/output/*
+SysTest/RegressionTests/log/*
+SysTest/RegressionTests/testLogs
+SysTest/RegressionTests/FlattenXML
+SysTest/RegressionTests/StGermain
+SysTest/RegressionTests/udw
+
+SysTest/PerformanceTests/output/*
+SysTest/PerformanceTests/log/*
+SysTest/PerformanceTests/testLogs
+SysTest/PerformanceTests/FlattenXML
+SysTest/PerformanceTests/StGermain
+SysTest/PerformanceTests/udw
+
+SysTest/ScienceBenchmarks/udw
+SysTest/ScienceBenchmarks/output/*
+SysTest/ScienceBenchmarks/log/*
+SysTest/ScienceBenchmarks/testLogs
+SysTest/ScienceBenchmarks/StGermain
+
+#Latex auto-generated files
+SysTest/AnalyticPlugins/*/*.aux
+SysTest/AnalyticPlugins/*/*.dvi
+SysTest/AnalyticPlugins/*/*.log
+SysTest/AnalyticPlugins/*/*.pdf
+SysTest/AnalyticPlugins/*/html
+
+# switch to regexp syntax.
+syntax: regexp
+(^|/)\.svn($|/)
+(^|/)\.hg($|/)
+(^|/)\.hgtags($|/)
+(^|/)output($|/)

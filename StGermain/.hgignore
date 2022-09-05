@@ -1,0 +1,17 @@
+# use glob syntax.
+syntax: glob
+
+*~
+*.pyc
+*.o
+*.os
+*-meta.c
+
+#Sphinx-generated build files
+pcu/doc/_build
+
+# switch to regexp syntax.
+syntax: regexp
+(^|/)\.svn($|/)
+(^|/)\.hg($|/)
+(^|/)\.hgtags($|/)

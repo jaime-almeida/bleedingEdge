@@ -1,0 +1,18 @@
+#Use glob syntax.
+syntax: glob
+
+*~
+*.pyc
+
+doc/_build/*
+doc/temp
+sampledoc_tut*
+credo/io/tests/output
+credo/systest/tests/output
+credo/tests/output/*
+
+# switch to regexp syntax.
+syntax: regexp
+(^|/)\.svn($|/)
+(^|/)\.hg($|/)
+(^|/)\.hgtags($|/)

@@ -1,0 +1,970 @@
+StGermain Framework Revision c4bda90f1c33c667ca4d7e599581e6faea061e35. Copyright (C) 2003-2005 VPAC.
+Toolbox "Underworld" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/Underworld_Toolboxmodule.so
+Toolbox "StgDomain" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/StgDomain_Toolboxmodule.so
+StgDomain (Domain Library) Revision 78c2ebc72c5312093501f65b823ee3f7f4403b63. Copyright (C) 2003-2007 VPAC.
+Toolbox "StgFEM" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/StgFEM_Toolboxmodule.so
+StgFEM (Finite Element Framework) Revision f16b97a9ee6a05c261345f0f4512b81889298adf. Copyright (C) 2003-2005 VPAC.
+Toolbox "PICellerator" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/PICellerator_Toolboxmodule.so
+PICellerator (Particle-In-Cell Framework) Revision 87ac66b026227d8a9a2b85f7467080007c66cd4c. Copyright (C) 2005-2010 VPAC & Monash University.
+Underworld (Geodynamics Framework) Revision d1a30765521592552eb91ce93ee21bc7f156c210. Copyright (C) 2005-2010 Monash University.
+Toolbox "CartesianEarthBox" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/CartesianEarthBox_Toolboxmodule.so
+CartesianEarthBox. Copyright (C) 2012 Monash University.
+
+Creating Stg_Components from the component-list
+
+	Instantiating UnderworldContext as context
+	Instantiating FeMesh as constantMesh
+	Instantiating C0Generator as constantMeshGenerator
+	Instantiating FeMesh as linearMesh
+	Instantiating CartesianGenerator as linearMeshGenerator
+	Instantiating MeshVariable as velocity
+	Instantiating CompositeVC as velocityBCs
+	Instantiating CompositeVC as velocityICs
+	Instantiating DofLayout as velocityDofLayout
+	Instantiating FeVariable as VelocityField
+	Instantiating OperatorFeVariable as VelocityMagnitudeField
+	Instantiating OperatorFeVariable as VelocityGradientsField
+	Instantiating OperatorFeVariable as VelocityGradientsInvariantField
+	Instantiating OperatorFeVariable as VelocityXXField
+	Instantiating OperatorFeVariable as VelocityYYField
+	Instantiating OperatorFeVariable as StrainRateField
+	Instantiating OperatorFeVariable as VorticityField
+	Instantiating OperatorFeVariable as StrainRateInvariantField
+	Instantiating OperatorFeVariable as StrainRateXXField
+	Instantiating OperatorFeVariable as StrainRateYYField
+	Instantiating MeshVariable as pressure
+	Instantiating CompositeVC as pressureBCs
+	Instantiating CompositeVC as pressureICs
+	Instantiating DofLayout as pressureDofLayout
+	Instantiating FeVariable as PressureField
+	Instantiating SingleCellLayout as cellLayout
+	Instantiating GaussParticleLayout as particleLayout
+	Instantiating IntegrationPointsSwarm as gaussSwarm
+	Instantiating TimeIntegrator as timeIntegrator
+	Instantiating ElementCellLayout as elementCellLayout
+	Instantiating PCDVC as weights
+	Instantiating MappedParticleLayout as localLayout
+	Instantiating IntegrationPointsSwarm as picIntegrationPoints
+	Instantiating CoincidentMapper as mapper
+	Instantiating SpaceFillerParticleLayout as materialSwarmParticleLayout
+	Instantiating ParticleMovementHandler as pMovementHandler
+	Instantiating ParticleShadowSync as pShadowSync
+	Instantiating MaterialPointsSwarm as materialSwarm
+	Instantiating SwarmAdvector as materialSwarmAdvector
+	Instantiating SolutionVector as solutionVelocity
+	Instantiating SolutionVector as solutionPressure
+	Instantiating ForceVector as mom_force
+	Instantiating ForceVector as cont_force
+	Instantiating StiffnessMatrix as k_matrix
+	Instantiating ConstitutiveMatrixCartesian as constitutiveMatrix
+	Instantiating StiffnessMatrix as g_matrix
+	Instantiating GradientStiffnessMatrixTerm as gradientStiffnessMatrixTerm
+	Instantiating StiffnessMatrix as preconditioner
+	Instantiating UzawaPreconditionerTerm as preconditionerTerm
+	Instantiating Stokes_SLE_UzawaSolver as uzawa
+	Instantiating Stokes_SLE as stokesEqn
+	Instantiating StiffnessMatrix as c_matrix
+	Instantiating MeshVariable as temperature
+	Instantiating CompositeVC as temperatureBCs
+	Instantiating CompositeVC as temperatureICs
+	Instantiating DofLayout as temperatureDofLayout
+	Instantiating FeVariable as TemperatureField
+	Instantiating OperatorFeVariable as TemperatureGradientsField
+	Instantiating ForceVector as residual
+	Instantiating ForceVector as massMatrix
+	Instantiating AdvDiffMulticorrector as predictorMulticorrector
+	Instantiating AdvectionDiffusionSLE as EnergyEqn
+	Instantiating LumpedMassMatrixForceTerm as lumpedMassMatrixForceTerm
+	Instantiating SUPGAdvDiffTermPpc as defaultResidualForceTerm
+	Instantiating PpcManager as default_ppcManager
+	Instantiating BuoyancyForceTermPpc as buoyancyForceTerm
+	Instantiating DummyComponent as sourceTerm
+	Instantiating Ppc_Constant as sourceTerm_thermalEqn
+	Instantiating MaterialIndexField as MaterialIndexField
+	Instantiating ViscosityField as ViscosityField
+	Instantiating StressField as deviatoricStressField
+	Instantiating SmoothVelGradField as smoothVelGradField
+	Instantiating OperatorFeVariable as smoothStrainRateField
+	Instantiating OperatorFeVariable as smoothStrainRateInvariantField
+	Instantiating StressField as StressField
+	Instantiating OperatorFeVariable as StressInvariantField
+	Instantiating OperatorFeVariable as StressXXField
+	Instantiating OperatorFeVariable as StressYYField
+	Instantiating OperatorFeVariable as StressXYField
+	Instantiating Scaling as default_scaling
+	Instantiating Box as FixedUPShape
+	Instantiating Everywhere as everywhere
+	Instantiating Box as lowermantleshape
+	Instantiating Box as TrickBox
+	Instantiating Box as lowerplateTleftshape
+	Instantiating Box as lowerplateTrightshape
+	Instantiating Box as ridgelowerplateTshape
+	Instantiating Box as upperplateTshape
+	Instantiating Box as ridgeupperplateTshape
+	Instantiating PolygonShape as weakzoneTcrustshape
+	Instantiating PolygonShape as crustperturbationTup
+	Instantiating PolygonShape as slabperturbationTup
+	Instantiating PolygonShape as crustperturbationTdown
+	Instantiating PolygonShape as slabperturbationTdown
+	Instantiating PolygonShape as upperplatecrustshape
+	Instantiating PolygonShape as upperplatemantleshape
+	Instantiating PolygonShape as weakzoneshape
+	Instantiating PolygonShape as crustslabshape
+	Instantiating PolygonShape as crustperturbation
+	Instantiating PolygonShape as mantleslabshape
+	Instantiating PolygonShape as slabperturbation
+	Instantiating Union as slabcrustshape
+	Instantiating Union as slabmantleshape
+	Instantiating Intersection as uppermantleshape
+	Instantiating Box as VelocityBCShape
+	Instantiating ViscosityLimiter as viscosityLimiter
+	Instantiating ViscosityImposedDepth as viscosityFixleft
+	Instantiating ViscosityImposedDepth as viscosityFixright
+	Instantiating ViscosityImposedDepth as UpperMantleTopFix
+	Instantiating ViscosityImposedDepth as UpperMantleBotFix
+	Instantiating RheologyMaterial as upperMantle
+	Instantiating MaterialViscosity as lowerMantleViscosity
+	Instantiating RheologyMaterial as LowerMantle
+	Instantiating RheologyMaterial as UpperPlateMantle
+	Instantiating RheologyMaterial as UpperPlateCrust
+	Instantiating RheologyMaterial as crustslab
+	Instantiating RheologyMaterial as mantleSlab
+	Instantiating MaterialViscosity as weakzoneViscosity
+	Instantiating RheologyMaterial as weakzone
+	Instantiating PatriceArrhenius as mantle_viscous_creep
+	Instantiating PatriceArrhenius as crust_viscous_creep
+	Instantiating Byerlee as weak_yielding
+	Instantiating DruckerPrager as mantle_yielding
+	Instantiating DruckerPrager as continental_crust_yielding
+	Instantiating DruckerPrager as crust_yielding
+	Instantiating StrainWeakening as strainWeakening
+	Instantiating Byerlee as mantle_peierls
+	Instantiating Byerlee as crust_peierls
+	Instantiating Byerlee as oc_peierls
+	Instantiating Ppc_Variable as tempPpc
+	Instantiating Ppc_Constant as TheDiffusivity
+	Instantiating Ppc_Constant as TheCp
+	Instantiating Ppc_Constant as TheAlpha
+	Instantiating Ppc_Constant as TheBeta
+	Instantiating Ppc_LinearDensity as upperplatemantledensity
+	Instantiating Ppc_LinearDensity as uppermantledensity
+	Instantiating Ppc_LinearDensity as lowermantledensity
+	Instantiating Ppc_LinearDensity as upperplatecrustdensity
+	Instantiating Ppc_LinearDensity as slabcrustdensity
+	Instantiating Ppc_LinearDensity as weakzonedensity
+	Instantiating ParticleMovementHandler as passiveSwarmMovementHandler
+	Instantiating ElementCellLayout as ElementCellLayoutTracer
+	Instantiating LineParticleLayout as passiveTracerLayoutSlab1
+	Instantiating LineParticleLayout as passiveTracerLayoutSlab2
+	Instantiating LineParticleLayout as passiveTracerLayoutSlab3
+	Instantiating LineParticleLayout as passiveTracerLayoutSlab4
+	Instantiating LineParticleLayout as passiveTracerLayoutSlab5
+	Instantiating UnionParticleLayout as passiveTracerLayoutExample1
+	Instantiating MaterialPointsSwarm as passiveTracerSwarm
+	Instantiating SwarmAdvector as passiveTracerAdvect
+	Instantiating Underworld_SwarmOutput as uso
+	Instantiating Ppc_Constant as diffusivityPpc
+****************************
+SCALING THE DICTIONARY
+****************************
+Constructing default_scaling..
+Scaling parameter     startX: 500 km --> 500000
+Scaling parameter       endX: 700 km --> 700000
+Scaling parameter     startY: 940 km --> 940000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 0 km --> 0
+Scaling parameter       endX: 4000 km --> 4e+06
+Scaling parameter     startY: 0 km --> 0
+Scaling parameter       endY: 340 km --> 340000
+Scaling parameter     startX: 1600 km --> 1.6e+06
+Scaling parameter       endX: 1620 km --> 1.62e+06
+Scaling parameter     startY: 980 km --> 980000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 1800 km --> 1.8e+06
+Scaling parameter       endX: 2000 km --> 2e+06
+Scaling parameter     startY: 840 km --> 840000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 2000 km --> 2e+06
+Scaling parameter       endX: 3600 km --> 3.6e+06
+Scaling parameter     startY: 840 km --> 840000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 3600 km --> 3.6e+06
+Scaling parameter       endX: 4000 km --> 4e+06
+Scaling parameter     startY: 840 km --> 840000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 400 km --> 400000
+Scaling parameter       endX: 1800 km --> 1.8e+06
+Scaling parameter     startY: 857 km --> 857000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter     startX: 0 km --> 0
+Scaling parameter       endX: 400 km --> 400000
+Scaling parameter     startY: 857 km --> 857000
+Scaling parameter       endY: 1000 km --> 1e+06
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1730 km --> 1.73e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1590 km --> 1.59e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 1490 km --> 1.49e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1540 km --> 1.54e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1600 km --> 1.6e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1600 km --> 1.6e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1610 km --> 1.61e+06
+Scaling parameter          y: 932.7 km --> 932700
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1610 km --> 1.61e+06
+Scaling parameter          y: 932.7 km --> 932700
+Scaling parameter          x: 1640 km --> 1.64e+06
+Scaling parameter          y: 882.7 km --> 882700
+Scaling parameter          x: 1830 km --> 1.83e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1600 km --> 1.6e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1440 km --> 1.44e+06
+Scaling parameter          y: 870 km --> 870000
+Scaling parameter          x: 1450 km --> 1.45e+06
+Scaling parameter          y: 852.7 km --> 852700
+Scaling parameter          x: 1610 km --> 1.61e+06
+Scaling parameter          y: 932.7 km --> 932700
+Scaling parameter          x: 1605 km --> 1.605e+06
+Scaling parameter          y: 942.7 km --> 942700
+Scaling parameter          x: 1450 km --> 1.45e+06
+Scaling parameter          y: 852.7 km --> 852700
+Scaling parameter          x: 1480 km --> 1.48e+06
+Scaling parameter          y: 800 km --> 800000
+Scaling parameter          x: 1640 km --> 1.64e+06
+Scaling parameter          y: 882.7 km --> 882700
+Scaling parameter          x: 1760 km --> 1.76e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1590 km --> 1.59e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 400 km --> 400000
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 100 km --> 100000
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1590 km --> 1.59e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 1490 km --> 1.49e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 400 km --> 400000
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 100 km --> 100000
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 100 km --> 100000
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 400 km --> 400000
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1760 km --> 1.76e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1590 km --> 1.59e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 1390 km --> 1.39e+06
+Scaling parameter          y: 870 km --> 870000
+Scaling parameter          x: 1440 km --> 1.44e+06
+Scaling parameter          y: 870 km --> 870000
+Scaling parameter          x: 1600 km --> 1.6e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 3950 km --> 3.95e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 3600 km --> 3.6e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 1600 km --> 1.6e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1440 km --> 1.44e+06
+Scaling parameter          y: 870 km --> 870000
+Scaling parameter          x: 1450 km --> 1.45e+06
+Scaling parameter          y: 852.7 km --> 852700
+Scaling parameter          x: 1610 km --> 1.61e+06
+Scaling parameter          y: 932.7 km --> 932700
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 3600 km --> 3.6e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 3900 km --> 3.9e+06
+Scaling parameter          y: 1000 km --> 1e+06
+Scaling parameter          x: 3900 km --> 3.9e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 3600 km --> 3.6e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1830 km --> 1.83e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 980 km --> 980000
+Scaling parameter          x: 1610 km --> 1.61e+06
+Scaling parameter          y: 932.7 km --> 932700
+Scaling parameter          x: 1450 km --> 1.45e+06
+Scaling parameter          y: 852.7 km --> 852700
+Scaling parameter          x: 1480 km --> 1.48e+06
+Scaling parameter          y: 800 km --> 800000
+Scaling parameter          x: 1640 km --> 1.64e+06
+Scaling parameter          y: 882.7 km --> 882700
+Scaling parameter          x: 1830 km --> 1.83e+06
+Scaling parameter          y: 920 km --> 920000
+Scaling parameter     startX: 3500 km --> 3.5e+06
+Scaling parameter       endX: 3500 km --> 3.5e+06
+Scaling parameter     startY: 920 km --> 920000
+Scaling parameter       endY: 980 km --> 980000
+Scaling parameter maxViscosity: 100 Pa*s --> 100
+Scaling parameter minViscosity: 0.0005 Pa*s --> 0.0005
+Scaling parameter  Viscosity: 0.001 Pa*s --> 0.001
+Scaling parameter       minx: 0 km --> 0
+Scaling parameter       maxx: 80 km --> 80000
+Scaling parameter       miny: 950 km --> 950000
+Scaling parameter       maxy: 1048 km --> 1.048e+06
+Scaling parameter  Viscosity: 0.001 Pa*s --> 0.001
+Scaling parameter       minx: 3920 km --> 3.92e+06
+Scaling parameter       maxx: 4000 km --> 4e+06
+Scaling parameter       miny: 950 km --> 950000
+Scaling parameter       maxy: 1048 km --> 1.048e+06
+Scaling parameter  Viscosity: 100 Pa*s --> 100
+Scaling parameter       minx: 30 km --> 30000
+Scaling parameter       maxx: 3970 km --> 3.97e+06
+Scaling parameter       miny: 982 km --> 982000
+Scaling parameter       maxy: 996 km --> 996000
+Scaling parameter  Viscosity: 100 Pa*s --> 100
+Scaling parameter       minx: 80 km --> 80000
+Scaling parameter       maxx: 3920 km --> 3.92e+06
+Scaling parameter       miny: 974 km --> 974000
+Scaling parameter       maxy: 982 km --> 982000
+Scaling parameter RadiogenicHeatProductionLabel: 2.2e-08 W/m^-3 --> 2.2e-08
+Scaling parameter       eta0: 0.3 Pa*s --> 0.3
+Scaling parameter RadiogenicHeatProductionLabel: 2.2e-08 W/m^-3 --> 2.2e-08
+Scaling parameter RadiogenicHeatProductionLabel: 2.2e-08 W/m^-3 --> 2.2e-08
+Scaling parameter RadiogenicHeatProductionLabel: 2e-06 W/m^-3 --> 2e-06
+Scaling parameter RadiogenicHeatProductionLabel: 2.5e-07 W/m^-3 --> 2.5e-07
+Scaling parameter RadiogenicHeatProductionLabel: 2.2e-08 W/m^-3 --> 2.2e-08
+Scaling parameter       eta0: 0.0001 Pa*s --> 0.0001
+Scaling parameter RadiogenicHeatProductionLabel: 2e-06 W/m^-3 --> 2e-06
+Scaling parameter PreExponentialFactor: 5.49e+26 (MPa)^-3.5*s^-1 --> 549000
+Scaling parameter ActivationEnergy: 530000 J/mol --> 530000
+Scaling parameter ActivationVolume: 1.2e-05 m^3/mol --> 1.2e-05
+Scaling parameter DefaultStrainRateInvariant: 100000 s^-1 --> 100000
+Scaling parameter PreExponentialFactor: 5.1e+16 (MPa)^-3*s^-1 --> 0.051
+Scaling parameter ActivationEnergy: 238000 J/mol --> 238000
+Scaling parameter ActivationVolume: 0 m^3/mol --> 0
+Scaling parameter DefaultStrainRateInvariant: 100000 s^-1 --> 100000
+Scaling parameter   cohesion: 0 MPa --> 0
+Scaling parameter  cohesion2: 300 MPa --> 3e+08
+Scaling parameter     depth2: 250 km --> 250000
+Scaling parameter     depth3: 350 km --> 350000
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 20 MPa --> 2e+07
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 10 MPa --> 1e+07
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 1 MPa --> 1e+06
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 900 MPa --> 9e+08
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 900 MPa --> 9e+08
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter   cohesion: 20 MPa --> 2e+07
+Scaling parameter  cohesion2: 300 MPa --> 3e+08
+Scaling parameter     depth2: 250 km --> 250000
+Scaling parameter     depth3: 350 km --> 350000
+Scaling parameter minimumViscosity: 0.0001 Pa*s --> 0.0001
+Scaling parameter      Value: 1e+16 m*m/s --> 1e+16
+Scaling parameter      Value: 1000 J/(kg*K) --> 1000
+Scaling parameter      Value: 3e-05 K^-1 --> 3e-05
+Scaling parameter      Value: 0 Pa^-1 --> 0
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 3300 kg/m^3 --> 3300
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 3300 kg/m^3 --> 3300
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 3650 kg/m^3 --> 3650
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 2750 kg/m^3 --> 2750
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 3300 kg/m^3 --> 3300
+Scaling parameter ReferenceTemperature: 273 K --> 273
+Scaling parameter ReferenceDensity: 3300 kg/m^3 --> 3300
+Scaling parameter          x: 700 km --> 700000
+Scaling parameter          y: 999 km --> 999000
+Scaling parameter          x: 1700 km --> 1.7e+06
+Scaling parameter          y: 999 km --> 999000
+Scaling parameter          x: 700 km --> 700000
+Scaling parameter          y: 971 km --> 971000
+Scaling parameter          x: 1700 km --> 1.7e+06
+Scaling parameter          y: 971 km --> 971000
+Scaling parameter          x: 1800 km --> 1.8e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 3500 km --> 3.5e+06
+Scaling parameter          y: 970 km --> 970000
+Scaling parameter          x: 700 km --> 700000
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 1700 km --> 1.7e+06
+Scaling parameter          y: 950 km --> 950000
+Scaling parameter          x: 700 km --> 700000
+Scaling parameter          y: 900 km --> 900000
+Scaling parameter          x: 1700 km --> 1.7e+06
+Scaling parameter          y: 900 km --> 900000
+Scaling parameter      Value: 1e+16 m*m/s --> 1e+16
+Scaling parameter    originx: 1000 km --> 1e+06
+Scaling parameter    originy: 1000 km --> 1e+06
+Scaling parameter valueAtOrigin: 1523 K --> 1523
+Scaling parameter  gradienty: -0.5 K/km --> -0.0005
+Scaling parameter    originx: 1000 km --> 1e+06
+Scaling parameter    originy: 340 km --> 340000
+Scaling parameter valueAtOrigin: 1855.5 K --> 1855.5
+Scaling parameter  gradienty: -0.5 K/km --> -0.0005
+Scaling parameter    originx: 0 km --> 0
+Scaling parameter    originy: 1000 km --> 1e+06
+Scaling parameter valueAtOrigin: 273 K --> 273
+Scaling parameter  gradienty: -20 K/km --> -0.02
+Scaling parameter age_at_minX: 4e+07 yr --> 1.26144e+15
+Scaling parameter age_at_maxX: 5e+07 yr --> 1.5768e+15
+Scaling parameter SurfaceTemperature: 273 K --> 273
+Scaling parameter LithosphereBaseTemperature: 1603 K --> 1603
+Scaling parameter ThermalDiffusivity: 1e-06 m^2/s --> 1e-06
+Scaling parameter age_at_minX: 5e+07 yr --> 1.5768e+15
+Scaling parameter age_at_maxX: 5e+07 yr --> 1.5768e+15
+Scaling parameter SurfaceTemperature: 273 K --> 273
+Scaling parameter LithosphereBaseTemperature: 1603 K --> 1603
+Scaling parameter ThermalDiffusivity: 1e-06 m^2/s --> 1e-06
+Scaling parameter age_at_minX: 5e+07 yr --> 1.5768e+15
+Scaling parameter age_at_maxX: 0 yr --> 0
+Scaling parameter SurfaceTemperature: 273 K --> 273
+Scaling parameter LithosphereBaseTemperature: 1603 K --> 1603
+Scaling parameter ThermalDiffusivity: 1e-06 m^2/s --> 1e-06
+Scaling parameter age_at_minX: 4e+07 yr --> 1.26144e+15
+Scaling parameter age_at_maxX: 4e+07 yr --> 1.26144e+15
+Scaling parameter SurfaceTemperature: 273 K --> 273
+Scaling parameter LithosphereBaseTemperature: 1594 K --> 1594
+Scaling parameter ThermalDiffusivity: 1e-06 m^2/s --> 1e-06
+Scaling parameter age_at_minX: 0 yr --> 0
+Scaling parameter age_at_maxX: 4e+07 yr --> 1.26144e+15
+Scaling parameter SurfaceTemperature: 273 K --> 273
+Scaling parameter LithosphereBaseTemperature: 1594 K --> 1594
+Scaling parameter ThermalDiffusivity: 1e-06 m^2/s --> 1e-06
+Scaling parameter    originx: 1600 km --> 1.6e+06
+Scaling parameter    originy: 950 km --> 950000
+Scaling parameter valueAtOrigin: 323 K --> 323
+Scaling parameter  gradientx: 0 K/km --> 0
+Scaling parameter  gradienty: -25 K/km --> -0.025
+Scaling parameter    originx: 1610 km --> 1.61e+06
+Scaling parameter    originy: 932.7 km --> 932700
+Scaling parameter valueAtOrigin: 823 K --> 823
+Scaling parameter  gradientx: 0 K/km --> 0
+Scaling parameter  gradienty: -11.67 K/km --> -0.01167
+Scaling parameter    originx: 1650 km --> 1.65e+06
+Scaling parameter    originy: 1000 km --> 1e+06
+Scaling parameter valueAtOrigin: 273 K --> 273
+Scaling parameter  gradienty: -13.1 K/km --> -0.0131
+Scaling parameter    originx: 1800 km --> 1.8e+06
+Scaling parameter    originy: 1000 km --> 1e+06
+Scaling parameter valueAtOrigin: 323 K --> 323
+Scaling parameter  gradientx: 0 K/km --> 0
+Scaling parameter  gradienty: -25 K/km --> -0.025
+Scaling parameter    originx: 1800 km --> 1.8e+06
+Scaling parameter    originy: 980 km --> 980000
+Scaling parameter valueAtOrigin: 823 K --> 823
+Scaling parameter  gradientx: 0 K/km --> 0
+Scaling parameter  gradienty: -10.67 K/km --> -0.01067
+Scaling parameter      value: 1855.5 K --> 1855.5
+Scaling parameter      value: 273 K --> 273
+Scaling parameter       minX: 0 km --> 0
+Scaling parameter       minY: 340 km --> 340000
+Scaling parameter       minZ: 0 km --> 0
+Scaling parameter       maxX: 4000 km --> 4e+06
+Scaling parameter       maxY: 1000 km --> 1e+06
+Scaling parameter       maxZ: 0 km --> 0
+Scaling parameter    Gravity: 9.8 m/s^2 --> 9.8
+
+Constructing Stg_Components from the live-component register
+
+	Constructing context..
+Plugin "Underworld_ShapeFemIC" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/Underworld_ShapeFemICmodule.so
+Plugin "StgFEM_FrequentOutput" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/StgFEM_FrequentOutputmodule.so
+Plugin "Underworld_Vrms" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/Underworld_Vrmsmodule.so
+Plugin "StgFEM_CPUTime" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/StgFEM_CPUTimemodule.so
+Plugin "Underworld_PressureCalibration" found using /home/seph/seph/Underworld/bleedingEdge/build/lib/Underworld_PressureCalibrationmodule.so
+		Constructing MeshVariable as velocity
+		Constructing velocity..
+			linearMesh has not been constructed yet. Constructing now.
+				Constructing linearMesh..
+		Constructing MeshVariable as pressure
+		Constructing pressure..
+			constantMesh has not been constructed yet. Constructing now.
+				Constructing constantMesh..
+		Constructing MeshVariable as temperature
+		Constructing temperature..
+		default_ppcManager has not been constructed yet. Constructing now.
+			Constructing default_ppcManager..
+				picIntegrationPoints has not been constructed yet. Constructing now.
+					Constructing picIntegrationPoints..
+						elementCellLayout has not been constructed yet. Constructing now.
+							Constructing elementCellLayout..
+						localLayout has not been constructed yet. Constructing now.
+							Constructing localLayout..
+						timeIntegrator has not been constructed yet. Constructing now.
+							Constructing timeIntegrator..
+						weights has not been constructed yet. Constructing now.
+							Constructing weights..
+								materialSwarm has not been constructed yet. Constructing now.
+									Constructing materialSwarm..
+										materialSwarmParticleLayout has not been constructed yet. Constructing now.
+											Constructing materialSwarmParticleLayout..
+											pMovementHandler has not been constructed yet. Constructing now.
+												Constructing pMovementHandler..
+											pShadowSync has not been constructed yet. Constructing now.
+												Constructing pShadowSync..
+						mapper has not been constructed yet. Constructing now.
+							Constructing mapper..
+	Constructing constantMeshGenerator..
+	Constructing linearMeshGenerator..
+	Constructing velocityBCs..
+	Constructing velocityICs..
+	Constructing velocityDofLayout..
+	Constructing VelocityField..
+	Constructing VelocityMagnitudeField..
+	Constructing VelocityGradientsField..
+	Constructing VelocityGradientsInvariantField..
+	Constructing VelocityXXField..
+	Constructing VelocityYYField..
+	Constructing StrainRateField..
+	Constructing VorticityField..
+	Constructing StrainRateInvariantField..
+	Constructing StrainRateXXField..
+	Constructing StrainRateYYField..
+	Constructing pressureBCs..
+	Constructing pressureICs..
+	Constructing pressureDofLayout..
+	Constructing PressureField..
+	Constructing cellLayout..
+	Constructing particleLayout..
+	Constructing gaussSwarm..
+	Constructing materialSwarmAdvector..
+	Constructing solutionVelocity..
+	Constructing solutionPressure..
+	Constructing mom_force..
+	Constructing cont_force..
+	Constructing k_matrix..
+	Constructing constitutiveMatrix..
+	Constructing g_matrix..
+	Constructing gradientStiffnessMatrixTerm..
+	Constructing preconditioner..
+	Constructing preconditionerTerm..
+	Constructing uzawa..
+	Constructing stokesEqn..
+		c_matrix has not been constructed yet. Constructing now.
+			Constructing c_matrix..
+	Constructing temperatureBCs..
+	Constructing temperatureICs..
+	Constructing temperatureDofLayout..
+	Constructing TemperatureField..
+	Constructing TemperatureGradientsField..
+	Constructing residual..
+	Constructing massMatrix..
+	Constructing predictorMulticorrector..
+	Constructing EnergyEqn..
+	Constructing lumpedMassMatrixForceTerm..
+	Constructing defaultResidualForceTerm..
+Found Ppc 'DiffusivityLabel' in the 'default_ppcManager' Properties list.
+	Constructing buoyancyForceTerm..
+Found Ppc 'DensityLabel' in the 'default_ppcManager' Properties list.
+	Constructing sourceTerm..
+	Constructing sourceTerm_thermalEqn..
+Creating Ppc 'sourceTerm_thermalEqn' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing MaterialIndexField..
+	Constructing ViscosityField..
+	Constructing deviatoricStressField..
+	Constructing smoothVelGradField..
+	Constructing smoothStrainRateField..
+	Constructing smoothStrainRateInvariantField..
+	Constructing StressField..
+	Constructing StressInvariantField..
+	Constructing StressXXField..
+	Constructing StressYYField..
+	Constructing StressXYField..
+	Constructing FixedUPShape..
+	Constructing everywhere..
+	Constructing lowermantleshape..
+	Constructing TrickBox..
+	Constructing lowerplateTleftshape..
+	Constructing lowerplateTrightshape..
+	Constructing ridgelowerplateTshape..
+	Constructing upperplateTshape..
+	Constructing ridgeupperplateTshape..
+	Constructing weakzoneTcrustshape..
+	Constructing crustperturbationTup..
+	Constructing slabperturbationTup..
+	Constructing crustperturbationTdown..
+	Constructing slabperturbationTdown..
+	Constructing upperplatecrustshape..
+	Constructing upperplatemantleshape..
+	Constructing weakzoneshape..
+	Constructing crustslabshape..
+	Constructing crustperturbation..
+	Constructing mantleslabshape..
+	Constructing slabperturbation..
+	Constructing slabcrustshape..
+	Constructing slabmantleshape..
+	Constructing uppermantleshape..
+	Constructing VelocityBCShape..
+	Constructing viscosityLimiter..
+	Constructing viscosityFixleft..
+	Constructing viscosityFixright..
+	Constructing UpperMantleTopFix..
+	Constructing UpperMantleBotFix..
+	Constructing upperMantle..
+			mantle_viscous_creep has not been constructed yet. Constructing now.
+				Constructing mantle_viscous_creep..
+			mantle_yielding has not been constructed yet. Constructing now.
+				Constructing mantle_yielding..
+Creating Ppc 'StrainRateField-ppc' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Creating Ppc 'StrainRateField' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Creating Ppc 'PressureField-ppc' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Creating Ppc 'PressureField' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+					Warning: Component 'mantle_yielding' cannot find non-essential input with key 'VelocityGradientsField'.
+			mantle_peierls has not been constructed yet. Constructing now.
+				Constructing mantle_peierls..
+
+Using maximum mesh height in y-axis for a height reference
+To use a (Ppc) function a the line
+	<param name="HeightReferenceInput">someInputfunction</param>
+
+	Constructing lowerMantleViscosity..
+	Constructing LowerMantle..
+	Constructing UpperPlateMantle..
+	Constructing UpperPlateCrust..
+			crust_viscous_creep has not been constructed yet. Constructing now.
+				Constructing crust_viscous_creep..
+			continental_crust_yielding has not been constructed yet. Constructing now.
+				Constructing continental_crust_yielding..
+					Warning: Component 'continental_crust_yielding' cannot find non-essential input with key 'VelocityGradientsField'.
+			crust_peierls has not been constructed yet. Constructing now.
+				Constructing crust_peierls..
+
+Using maximum mesh height in y-axis for a height reference
+To use a (Ppc) function a the line
+	<param name="HeightReferenceInput">someInputfunction</param>
+
+	Constructing crustslab..
+			crust_yielding has not been constructed yet. Constructing now.
+				Constructing crust_yielding..
+					Warning: Component 'crust_yielding' cannot find non-essential input with key 'VelocityGradientsField'.
+			oc_peierls has not been constructed yet. Constructing now.
+				Constructing oc_peierls..
+
+Using maximum mesh height in y-axis for a height reference
+To use a (Ppc) function a the line
+	<param name="HeightReferenceInput">someInputfunction</param>
+
+	Constructing mantleSlab..
+	Constructing weakzoneViscosity..
+	Constructing weakzone..
+			weak_yielding has not been constructed yet. Constructing now.
+				Constructing weak_yielding..
+
+Using maximum mesh height in y-axis for a height reference
+To use a (Ppc) function a the line
+	<param name="HeightReferenceInput">someInputfunction</param>
+
+	Constructing strainWeakening..
+	Constructing tempPpc..
+Creating Ppc 'tempPpc' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Creating Ppc 'TemperatureField' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing TheDiffusivity..
+Creating Ppc 'TheDiffusivity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing TheCp..
+Creating Ppc 'TheCp' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing TheAlpha..
+Creating Ppc 'TheAlpha' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing TheBeta..
+Creating Ppc 'TheBeta' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing upperplatemantledensity..
+Creating Ppc 'upperplatemantledensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing uppermantledensity..
+Creating Ppc 'uppermantledensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing lowermantledensity..
+Creating Ppc 'lowermantledensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing upperplatecrustdensity..
+Creating Ppc 'upperplatecrustdensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing slabcrustdensity..
+Creating Ppc 'slabcrustdensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing weakzonedensity..
+Creating Ppc 'weakzonedensity' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+Found Ppc 'tempPpc' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheBeta' in the 'default_ppcManager' Properties list.
+Found Ppc 'TheAlpha' in the 'default_ppcManager' Properties list.
+	Constructing passiveSwarmMovementHandler..
+	Constructing ElementCellLayoutTracer..
+	Constructing passiveTracerLayoutSlab1..
+	Constructing passiveTracerLayoutSlab2..
+	Constructing passiveTracerLayoutSlab3..
+	Constructing passiveTracerLayoutSlab4..
+	Constructing passiveTracerLayoutSlab5..
+	Constructing passiveTracerLayoutExample1..
+	Constructing passiveTracerSwarm..
+	Constructing passiveTracerAdvect..
+	Constructing uso..
+	Constructing diffusivityPpc..
+Creating Ppc 'diffusivityPpc' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+	Constructing Underworld_ShapeFemIC..
+	Constructing StgFEM_FrequentOutput..
+	Constructing Underworld_Vrms..
+	Constructing StgFEM_CPUTime..
+	Constructing Underworld_PressureCalibration..
+
+Building Stg_Components from the live-component register
+
+Cartesian generator: 'linearMeshGenerator'
+	Target mesh: 'linearMesh'
+	Global element size: 304x80
+	Local offset of rank 0: 0x0
+	Local range of rank 0: 76x40
+	Generating vertices...
+		... done.
+	Generating elements...
+		... done.
+	Generating edges...
+		... done.
+	Generating element-vertex incidence...
+		... done.
+	Generating face-edge incidence...
+		... done.
+	Generating edge-vertex incidence...
+		... done.
+	Generating vertex neighbours...
+		... done.
+	Generating geometry...
+		... done.
+	Generating element types...
+		... element types are 'Mesh_HexType',
+		... mesh algorithm type is 'Mesh_RegularAlgorithms',
+		... done.
+	Assigning FeMesh element types...
+		... FE element types are 'BilinearElementType',
+		... done.
+Warning - in _WallVC_GetSet: Can't build a MaxK_front wall VC when mesh has no elements in the K axis. Returning an empty set.
+Warning - in _WallVC_GetSet: Can't build a MinK_back wall VC when mesh has no elements in the K axis. Returning an empty set.
+Stiffness matrix: 'k_matrix'
+	Calculating number of nonzero entries...
+		Found 860895 nonzero entries.
+		Done.
+	Assigning FeMesh element types...
+		... FE element types are 'ConstantElementType',
+		... done.
+FeEquationNumber: 'defaultFeVariableFeEqName'
+	Generating equation numbers...
+		BCs set to be removed.
+		Assigned 24320 global equation numbers.
+		[0] Assigned 3040 local equation numbers, within range 0 to 3040.
+	... Completed in 0.00325799 [min] / 0.00629592 [max] seconds.
+Stiffness matrix: 'g_matrix'
+	Calculating number of nonzero entries...
+		Found 192419 nonzero entries.
+		Done.
+Stiffness matrix: 'c_matrix'
+	Calculating number of nonzero entries...
+		Found 24320 nonzero entries.
+		Done.
+Stiffness matrix: 'preconditioner'
+	Calculating number of nonzero entries...
+		Found 24320 nonzero entries.
+		Done.
+Linking materials and ppc... 
+
+Physical properties for material upperMantle:
+
+Physical properties for material LowerMantle:
+
+Physical properties for material UpperPlateMantle:
+
+Physical properties for material UpperPlateCrust:
+
+Physical properties for material crustslab:
+
+Physical properties for material mantleSlab:
+
+Physical properties for material weakzone:
+
+Physical properties for material upperMantle:
+
+Physical properties for material LowerMantle:
+
+Physical properties for material UpperPlateMantle:
+
+Physical properties for material UpperPlateCrust:
+
+Physical properties for material crustslab:
+
+Physical properties for material mantleSlab:
+
+Physical properties for material weakzone:
+
+Physical properties for material upperMantle:
+
+Physical properties for material LowerMantle:
+
+Physical properties for material UpperPlateMantle:
+
+Physical properties for material UpperPlateCrust:
+
+Physical properties for material crustslab:
+
+Physical properties for material mantleSlab:
+
+Physical properties for material weakzone:
+
+Physical properties for material upperMantle:
+
+Physical properties for material LowerMantle:
+
+Physical properties for material UpperPlateMantle:
+
+Physical properties for material UpperPlateCrust:
+
+Physical properties for material crustslab:
+
+Physical properties for material mantleSlab:
+
+Physical properties for material weakzone:
+
+Physical properties for material upperMantle:
+Creating Ppc 'upperMantle-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material LowerMantle:
+Creating Ppc 'LowerMantle-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material UpperPlateMantle:
+Creating Ppc 'UpperPlateMantle-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material UpperPlateCrust:
+Creating Ppc 'UpperPlateCrust-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material crustslab:
+Creating Ppc 'crustslab-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material mantleSlab:
+Creating Ppc 'mantleSlab-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material weakzone:
+Creating Ppc 'weakzone-RadiogenicHeatProductionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material upperMantle:
+Creating Ppc 'upperMantle-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material LowerMantle:
+Creating Ppc 'LowerMantle-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material UpperPlateMantle:
+Creating Ppc 'UpperPlateMantle-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material UpperPlateCrust:
+Creating Ppc 'UpperPlateCrust-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material crustslab:
+Creating Ppc 'crustslab-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material mantleSlab:
+Creating Ppc 'mantleSlab-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+
+Physical properties for material weakzone:
+Creating Ppc 'weakzone-LatentHeatFusionLabel' as a solePpc not related to the Properties list defined in 'default_ppcManager'.
+done
+
+Initialising Stg_Components from the live-component register
+
+Laying out material 'upperMantle' within Intersection 'uppermantleshape':
+Laying out material 'LowerMantle' within Box 'lowermantleshape':
+Laying out material 'UpperPlateMantle' within PolygonShape 'upperplatemantleshape':
+Laying out material 'UpperPlateCrust' within PolygonShape 'upperplatecrustshape':
+Laying out material 'crustslab' within Union 'slabcrustshape':
+Laying out material 'mantleSlab' within Union 'slabmantleshape':
+Laying out material 'weakzone' within PolygonShape 'weakzoneshape':
+In func Materials_Register_AssignParticleProperties(): for swarm "materialSwarm"
+	Assigning initial particle properties to the 486400 global particles
+		done 10% (6080 particles)...
+		done 20% (12160 particles)...
+		done 30% (18240 particles)...
+		done 40% (24320 particles)...
+		done 50% (30400 particles)...
+		done 60% (36480 particles)...
+		done 70% (42560 particles)...
+		done 80% (48640 particles)...
+		done 90% (54720 particles)...
+		done 100% (60799 particles)...
+Materials_Register_AssignParticleProperties(): finished setup of material properties for swarm "materialSwarm"
+	took 0.177626 [min] / 0.227363 [max] secs
+In func WeightsCalculator_CalculateAll(): for swarm "picIntegrationPoints"
+	Calculating weights for the particles in the 24320 global cells
+		done 10% (304 cells)...
+		done 20% (608 cells)...
+		done 30% (912 cells)...
+		done 40% (1216 cells)...
+		done 50% (1520 cells)...
+		done 60% (1824 cells)...
+		done 70% (2128 cells)...
+		done 80% (2432 cells)...
+		done 90% (2736 cells)...
+		done 100% (3040 cells)...
+WeightsCalculator_CalculateAll(): finished update of weights for swarm "picIntegrationPoints"
+Run until simulation has stepped forward 1000 timeSteps
+Laying out material 'upperMantle' within Intersection 'uppermantleshape':
+Laying out material 'LowerMantle' within Box 'lowermantleshape':
+Laying out material 'UpperPlateMantle' within PolygonShape 'upperplatemantleshape':
+Laying out material 'UpperPlateCrust' within PolygonShape 'upperplatecrustshape':
+Laying out material 'crustslab' within Union 'slabcrustshape':
+Laying out material 'mantleSlab' within Union 'slabmantleshape':
+Laying out material 'weakzone' within PolygonShape 'weakzoneshape':
+In func Materials_Register_AssignParticleProperties(): for swarm "passiveTracerSwarm"
+	Assigning initial particle properties to the 950 global particles
+Materials_Register_AssignParticleProperties(): finished setup of material properties for swarm "passiveTracerSwarm"
+	took 0.00330091 [min] / 0.0118461 [max] secs
+TimeStep = 0, Start time = 0, prev timeStep dt = 0
+In SystemLinearEquations_NonLinearExecute
+
+Non linear solver - iteration 0
+Linear solver (stokesEqn-execute) 
+Summary:
+  Uzawa its. = 0071 , Uzawa residual = 8.4168563673669e-06
+  |G^T u|/|u|               = 2.43872132e+02
+  |f - K u - G p|/|f|       = 8.80040048e-13
+  |f - K u - G p|_w/|f|_w   = 1.00000000e+00
+  |u|_{\infty} = 4.27677954e+12 , u_rms = 5.27110940e+10
+  |p|_{\infty} = 1.12159244e+10 , p_rms = 5.99734199e+09
+  min/max(u) = -2.62373396e+12 [48335] / 4.27677954e+12 [30019]
+  min/max(p) = -1.12159244e+10 [18221] / 9.00251184e+09 [9160]
+  \sum_i p_i = -2.61135417e+13 
+Linear solver (stokesEqn-execute), solution time 1.190613e+00 (secs)
+Non linear solver - iteration 1
+Linear solver (stokesEqn-execute) 

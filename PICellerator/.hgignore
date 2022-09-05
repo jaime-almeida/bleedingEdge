@@ -1,0 +1,24 @@
+# use glob syntax.
+syntax: glob
+
+*~
+*.pyc
+.sconsign.tmp
+
+# Regression testing related
+SysTest/RegressionTests/expected/*
+SysTest/RegressionTests/log/*
+SysTest/RegressionTests/output/*
+SysTest/RegressionTests/testLogs
+SysTest/RegressionTests/StGermain
+
+SysTest/PerformanceTests/log/*
+SysTest/PerformanceTests/output/*
+SysTest/PerformanceTests/testLogs
+SysTest/PerformanceTests/StGermain
+
+# switch to regexp syntax.
+syntax: regexp
+(^|/)\.svn($|/)
+(^|/)\.hg($|/)
+(^|/)\.hgtags($|/)

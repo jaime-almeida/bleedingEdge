@@ -1,0 +1,27 @@
+#!/bin/bash
+#PBS -P n69
+#PBS -q normal
+#PBS -l walltime=00:40:00
+#PBS -l mem=256GB
+#PBS -l ncpus=256
+#PBS -l wd
+#PBS -N 3DNwRep
+
+module purge
+module load mercurial/2.4.2
+module load hdf5/1.8.10
+module load intel-mkl/13.4.183
+module load openmpi/1.6.3
+module load parmetis/3.1.1
+module load petsc/3.1.8
+module load python/2.7.3
+module load pbs
+
+
+export MPIRUN=mpirun
+export UWPATH=$HOME/bleedingEdge
+export UW_DIR=$UWPATH/build
+export UWEXEC=$UW_DIR/bin/Underworld
+export INPUTFILES=$UWPATH/CartesianEarthBox/InputFiles/
+
+mpirun $UWEXEC $INPUTFILES/TS_And_3D_2.0_Wrep.xml --maxTimeSteps=1 $UWPATH/StgFEM/Apps/StgFEM_Components/MultigridForRegular.xml -options_file $UWPATH/Underworld/InputFiles/options/options-uzawa-mgWrep.opt --mgLevels=5 --components.uzawa.monitor=true --components.uzawa.tolerance=5e-4 >3DWrep
